@@ -39,14 +39,16 @@ namespace ControlWork
 
         //Сортировка выбором
         internal int[] SelectionSort(int[] mas)
-        { 
-           for (int i = 0; i < mas.Length - 1; i++)
+        {
+            int[] res = new int[mas.Length];
+            Array.Copy(mas, res, mas.Length);
+            for (int i = 0; i < res.Length - 1; i++)
             {
                 int min = i;
 
-                for (int j = i + 1; j < mas.Length; j++)
+                for (int j = i + 1; j < res.Length; j++)
                 {
-                    if (mas[j] < mas[min])
+                    if (res[j] < res[min])
                     {
                         min = j;
                     }
@@ -54,12 +56,12 @@ namespace ControlWork
 
                 if (min != i)
                 {
-                    int temp = mas[i];
-                    mas[i] = mas[min];
-                    mas[min] = temp;
+                    int temp = res[i];
+                    res[i] = res[min];
+                    res[min] = temp;
                 }
             }
-            return mas;
+            return res;
         }
 
         //Сортировка вставкой

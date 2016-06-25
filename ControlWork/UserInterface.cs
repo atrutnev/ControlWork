@@ -44,7 +44,7 @@ namespace ControlWork
             Console.WriteLine("\t\t\tКонтрольные задания по C#");
             Console.WriteLine((new string('=', 79)));
             Console.WriteLine("\n");
-            Console.WriteLine("Задание 2.\nСортировка массива из 100 чисел:");
+            Console.WriteLine("Задание 2.\nСортировка массива из 100 чисел.");
             var so = new SortingOperations();
             int[] mas = new int[100];
             Random rd = new Random();
@@ -61,7 +61,7 @@ namespace ControlWork
 
             Console.WriteLine("Сортировка массива слиянием:");
             Console.ForegroundColor = ConsoleColor.White;
-            int [] mergeMas = so.mergeSort(mas);
+            int[] mergeMas = so.mergeSort(mas);
             foreach (int x in mergeMas)
             {
                 Console.Write(x + " ");
@@ -69,6 +69,16 @@ namespace ControlWork
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n");
 
+            Console.WriteLine("Сортировка массива вставкой:");
+            Console.ForegroundColor = ConsoleColor.White;
+            int[] insertionMas = so.InsertionSort(mas);
+            foreach (int x in insertionMas)
+            {
+                Console.Write(x + " ");
+            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n");
+           
             Console.WriteLine("Сортировка массива выбором:");
             Console.ForegroundColor = ConsoleColor.White;
             int[] selectionMas = so.SelectionSort(mas);
@@ -78,19 +88,10 @@ namespace ControlWork
             }
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n");
-            
-            Console.WriteLine("Сортировка массива вставкой:");
-            Console.ForegroundColor = ConsoleColor.White;
-            int[] insertionMas = so.InsertionSort(mas);
-            foreach (int x in insertionMas)
-            {
-                Console.Write(x + " ");
-            }
-            Console.WriteLine("\n");
             Console.WriteLine("Для перехода к следующему заданию нажмите любую клавишу...");
             Console.ReadKey();
         }
-        
+
         internal void DisplayEncryptedWord()
         {
             Console.Clear();

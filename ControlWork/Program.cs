@@ -15,7 +15,6 @@ namespace ControlWork
             ui.DisplayFactorial();
             ui.DisplaySort();
             ui.DisplayEncryptedWord();
-            Console.ReadKey();
         }
     }
 }
